@@ -20,6 +20,8 @@ apt-get update
 apt-get install -y tor nyx
 apt-get install -y vanguards
 
+pip3 install pyyaml stem
+
 service tor stop
 rm /etc/tor/torrc
 mv torrc /etc/tor/torrc
@@ -29,6 +31,6 @@ cd onionbalance
 python3 setup.py install
 
 clear
-onionbalance-config --hs-version v3 -n 3
+python3 onionbalance-config.py --hs-version v3 -n 3
 
 echo "Setup Done.You need to do configuration"
